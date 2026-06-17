@@ -2,6 +2,8 @@
 
 A cycling blog template for [Toucan](https://toucansites.com/). Built for road cyclists who want a fast, readable blog with tag filtering.
 
+**[Live demo →](https://velodrome.purzelbaum.hu/)**
+
 ---
 
 ![](./velodrome/assets/Home.png)
