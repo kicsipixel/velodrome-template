@@ -4,7 +4,7 @@ A cycling blog template for [Toucan](https://toucansites.com/). Built for road c
 
 ---
 
-![](./assets/Home.png)
+![](./velodrome/assets/Home.png)
 
 
 ---
@@ -21,7 +21,7 @@ A cycling blog template for [Toucan](https://toucansites.com/). Built for road c
 
 ---
 
-![](./assets/Showcase.png)
+![](./velodrome/assets/Showcase.png)
 
 ---
 
@@ -224,4 +224,4 @@ Get a free kit code at [fontawesome.com/start](https://fontawesome.com/start) â€
 
 ## License
 
-[MIT](./LICENSE)
+[MIT](./velodrome/LICENSE)
