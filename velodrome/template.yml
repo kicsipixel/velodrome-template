@@ -1,0 +1,15 @@
+name: "Velodrome"
+description: "Cycling blog starter template."
+version: "1.0.0"
+generatorVersion:
+  value: "1.0.0-beta.6"
+authors:
+  - name: "Velodrome"
+license:
+  name: "MIT license"
+  url: "https://github.com/kicsipixel/velodrome-template?tab=MIT-1-ov-file"
+tags:
+  - "blog"
+  - "cycling"
+  - "velodrome"
+  - "template"

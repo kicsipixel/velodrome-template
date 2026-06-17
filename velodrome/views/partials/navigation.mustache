@@ -1,0 +1,13 @@
+<nav class="nav">
+    <div class="nav-inner">
+        <a class="nav-logo" href="{{baseUrl}}">🚴 {{site.name}}</a>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            {{#site.navigation}}
+            <li><a href="{{baseUrl}}{{url}}"{{#class}} class="{{.}}"{{/class}}>{{label}}</a></li>
+            {{/site.navigation}}
+        </ul>
+    </div>
+</nav>

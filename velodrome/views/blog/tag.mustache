@@ -1,0 +1,44 @@
+{{<html}}
+{{$main}}
+
+<div style="background: var(--color-surface); border-bottom: 1px solid var(--color-border); padding: var(--space-6) 0;">
+    <div class="container" style="display: flex; align-items: center; gap: var(--space-4);">
+        <span class="tag" style="font-size: var(--text-base); padding: var(--space-2) var(--space-4);">{{page.title}}</span>
+        <span style="color: var(--color-text-muted); font-size: var(--text-sm);">{{page.description}}</span>
+    </div>
+</div>
+
+<div class="container">
+    <div class="post-list">
+        {{#page.posts}}
+        <article class="post-card">
+            {{#imageUrl}}
+            <div class="post-thumbnail">
+                <img src="{{.}}" alt="{{title}}">
+            </div>
+            {{/imageUrl}}
+            {{^imageUrl}}
+            <div class="post-thumbnail post-thumbnail-placeholder">
+                <img src="{{baseUrl}}/bicycle.svg" alt="" class="placeholder-icon" width="40" height="36">
+            </div>
+            {{/imageUrl}}
+            <div class="post-body">
+                {{#tags}}
+                <a class="tag" href="{{baseUrl}}/tags/{{.}}/">{{.}}</a>
+                {{/tags}}
+                <h2 class="post-title">
+                    <a href="{{permalink}}">{{title}}</a>
+                </h2>
+                <p class="post-excerpt">{{description}}</p>
+                <time class="post-date">{{date.date.medium}}</time>
+            </div>
+        </article>
+        {{/page.posts}}
+        {{^page.posts}}
+        <p style="padding: var(--space-8) 0; color: var(--color-text-muted);">No posts with this tag yet.</p>
+        {{/page.posts}}
+    </div>
+</div>
+
+{{/main}}
+{{/html}}

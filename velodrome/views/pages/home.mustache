@@ -1,0 +1,51 @@
+{{<html}}
+{{$main}}
+
+<div class="intro-strip">
+    <div class="container">
+        <h1>{{page.title}}</h1>
+        <p>{{page.description}}</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="post-list">
+        {{#context.posts}}
+        <article class="post-card">
+            {{#imageUrl}}
+            <div class="post-thumbnail">
+                <img src="{{.}}" alt="{{title}}">
+            </div>
+            {{/imageUrl}}
+            {{^imageUrl}}
+            <div class="post-thumbnail post-thumbnail-placeholder">
+                <img src="{{baseUrl}}/bicycle.svg" alt="" class="placeholder-icon" width="40" height="36">
+            </div>
+            {{/imageUrl}}
+            <div class="post-body">
+                {{#tags}}
+                <a class="tag" href="{{baseUrl}}/tags/{{.}}/">{{.}}</a>
+                {{/tags}}
+                <h2 class="post-title">
+                    <a href="{{permalink}}">{{title}}</a>
+                </h2>
+                <p class="post-excerpt">{{description}}</p>
+                <time class="post-date">{{date.date.medium}}</time>
+            </div>
+        </article>
+        {{/context.posts}}
+        {{^context.posts}}
+        <p>No posts yet. Check back soon!</p>
+        {{/context.posts}}
+    </div>
+
+    {{#pagination}}
+    <nav class="pagination">
+        {{#prev}}<a class="btn btn-secondary" href="{{baseUrl}}{{url}}">← Older posts</a>{{/prev}}
+        {{#next}}<a class="btn btn-primary" href="{{baseUrl}}{{url}}">Newer posts →</a>{{/next}}
+    </nav>
+    {{/pagination}}
+</div>
+
+{{/main}}
+{{/html}}

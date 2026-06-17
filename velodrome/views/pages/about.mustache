@@ -1,0 +1,21 @@
+{{<html}}
+{{$main}}
+
+<div class="intro-strip">
+    <div class="container">
+        <h1>{{page.title}}</h1>
+    </div>
+</div>
+
+<div class="about-wrap">
+    <div class="about-avatar"></div>
+    <h2 class="about-name">{{page.authorName}}</h2>
+    <p class="about-tagline">{{page.authorTagline}}</p>
+    <hr class="about-divider">
+    <div class="about-bio">
+        {{& page.contents.html}}
+    </div>
+</div>
+
+{{/main}}
+{{/html}}

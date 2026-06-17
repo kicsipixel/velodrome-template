@@ -1,0 +1,20 @@
+{{<html}}
+{{$main}}
+
+<div class="intro-strip">
+    <div class="container">
+        <h1>{{page.title}}</h1>
+        {{#page.description}}<p>{{.}}</p>{{/page.description}}
+    </div>
+</div>
+
+<div class="container" style="padding-top: var(--space-12); padding-bottom: var(--space-12);">
+    <article>
+        <div class="post-body">
+            {{& page.contents.html}}
+        </div>
+    </article>
+</div>
+
+{{/main}}
+{{/html}}

@@ -1,0 +1,61 @@
+{{<html}}
+{{$hero}}
+{{#page.imageUrl}}
+<div class="post-hero">
+    <img src="{{page.imageUrl}}" alt="{{page.title}}">
+    <div class="post-hero-bar"></div>
+</div>
+{{/page.imageUrl}}
+{{^page.imageUrl}}
+<div class="post-hero post-hero-placeholder">
+    <img src="{{baseUrl}}/bicycle.svg" alt="" class="placeholder-icon" width="80" height="71">
+    <div class="post-hero-bar"></div>
+</div>
+{{/page.imageUrl}}
+{{/hero}}
+{{$heroCaption}}
+{{#page.imageCaption}}
+<div class="hero-caption container-article">
+    <small>{{& page.imageCaption}}</small>
+</div>
+{{/page.imageCaption}}
+{{/heroCaption}}
+{{$main}}
+
+<div class="container-article" style="padding-top: var(--space-10); padding-bottom: var(--space-16);">
+    <article>
+        <header class="article-header">
+            <div class="tag-list">
+                {{#page.tags}}<a class="tag" href="{{baseUrl}}/tags/{{.}}/">{{.}}</a>{{/page.tags}}
+            </div>
+            <h1>{{page.title}}</h1>
+            <div class="article-byline">
+                <time class="post-date" datetime="{{page.date.iso8601}}">{{page.date.date.medium}}</time>
+                {{#page.author}}<span>· {{name}}</span>{{/page.author}}
+            </div>
+        </header>
+
+        <div class="post-body">
+            {{& page.contents.html}}
+        </div>
+
+        <nav class="post-nav">
+            {{#page.prev}}
+            <a class="post-nav-item prev" href="{{baseUrl}}{{slug}}/">
+                <span class="nav-label">← Previous post</span>
+                <span class="nav-title">{{title}}</span>
+            </a>
+            {{/page.prev}}
+            {{^page.prev}}<div></div>{{/page.prev}}
+            {{#page.next}}
+            <a class="post-nav-item next" href="{{baseUrl}}{{slug}}/">
+                <span class="nav-label">Next post →</span>
+                <span class="nav-title">{{title}}</span>
+            </a>
+            {{/page.next}}
+        </nav>
+    </article>
+</div>
+
+{{/main}}
+{{/html}}
